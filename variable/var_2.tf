@@ -2,6 +2,6 @@ variable uname {
 
 }
 
-output print {
+output show {
     value = "Hello,${var.uname}"
 }
