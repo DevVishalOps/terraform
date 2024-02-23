@@ -1,4 +1,5 @@
 #using custom variable file change terraform.tfvars with any name using .tfvars extention
+#run file using these command ---->terraform plan -var-file "file_name.tfvars"
 variable "age" {
     type = number
 }
