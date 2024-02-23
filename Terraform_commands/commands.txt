@@ -1,0 +1,10 @@
+terraform init ---> initialize
+terraform plan ---->to create blue print
+terraform apply --->to create infrastructure
+terraform validate ---->error or not
+terraform destroy ----> destroy all resoures
+terraform destroy --target "resourese_name"---->destroy particular resoures
+terraform refersh ---->changes
+terraform show ---->show the state file
+terraformconsole ---> used to print any variable value  you provide it
+terraform fmt ---> used to correct indentation of your all files
