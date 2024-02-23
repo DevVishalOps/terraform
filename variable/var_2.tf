@@ -3,5 +3,5 @@ variable username {
 }
 
 output print {
-    value = "Hello ${var.username}"
+    value = "Hello,${var.username}"
 }
