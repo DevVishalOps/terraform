@@ -1,7 +1,7 @@
-variable username {
+variable uname {
 
 }
 
 output print {
-    value = "Hello,${var.username}"
+    value = "Hello,${var.uname}"
 }
