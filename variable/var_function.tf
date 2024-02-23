@@ -5,5 +5,5 @@ variable "list" {
 }
 
 output "list_1st_output" {
-    value = "${join(",",var.list)}"
+    value = "${join("----->",var.list)}"
 }
