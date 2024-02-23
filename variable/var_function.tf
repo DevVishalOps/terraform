@@ -9,5 +9,5 @@ output "list_join_function" {
 }
 
 output "list_upper_function" {
-    value = "${upper(var.list)}"
+    value = "${upper(var.list[0])}"
 }
