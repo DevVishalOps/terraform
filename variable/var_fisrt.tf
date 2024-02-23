@@ -7,6 +7,8 @@ output print {
     value = var.username
 }
 
+# terraform plan -var "username=vishal"
+
 #second tf varible file
 
 variable uname {
@@ -16,3 +18,5 @@ variable uname {
 output show {
     value = "Hello,${var.uname}"
 }
+
+#terraform plan -var "uname=vishal" 
