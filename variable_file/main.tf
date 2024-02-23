@@ -7,5 +7,5 @@ variable "username" {
 }
 
 output "map_lookup_function" {
-    value = "My name is ${var.username} ${lookup(var.age,"${var.username}")}"
+    value = "My name is ${var.username} My age is ${var.age}"
 }
