@@ -1,11 +1,11 @@
 output name {
-    value = Vishal
+    value = "Vishal"
 }
 
 output mname {
-    value = Rajesh
+    value = "Rajesh"
 }
 
 output sname {
-    value = Rajput
+    value = "Rajput"
 }
