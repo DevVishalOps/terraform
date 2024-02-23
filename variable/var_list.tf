@@ -12,5 +12,5 @@ output "list_2nd_output" {
 }
 
 output "list_3rd_output" {
-    value = "${var.list[3]}"
+    value = "${var.list[2]}"
 }
