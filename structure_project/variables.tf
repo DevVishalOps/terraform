@@ -1,7 +1,3 @@
-variable "ports" {
-    type = list(number)
-}
-
 variable "ami_id" {
     type = string
 }
