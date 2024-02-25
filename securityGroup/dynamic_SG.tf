@@ -14,3 +14,7 @@ resource "aws_security_group" "allow_tls" {
     }
   }
 }
+
+output "securityGroupDetatils" {
+    value = "${aws_security_group.allow_tls.id}"
+}
