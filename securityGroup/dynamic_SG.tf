@@ -3,7 +3,7 @@ resource "aws_security_group" "allow_tls" {
   description = "Allow TLS inbound traffic"
 
   dynamic "ingress" {
-    for_each = [22,80,443.3306]
+    for_each = [22,80,443,3306]
     iterator = port
     content {
         description = "TLS from VPC"
