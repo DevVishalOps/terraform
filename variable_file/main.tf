@@ -1,3 +1,4 @@
+#using terraform.tfvars file
 variable "age" {
     type = number
 }
