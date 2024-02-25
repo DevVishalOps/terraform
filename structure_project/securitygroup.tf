@@ -1,5 +1,5 @@
-resource "aws_security_group" "Structure_Project_SG" {
-  name        = "Structure_Project_SG"
+resource "aws_security_group" "allow_tls" {
+  name        = "allow_tls"
   description = "Allow TLS inbound traffic"
 
   dynamic "ingress" {
