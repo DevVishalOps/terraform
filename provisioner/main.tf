@@ -41,10 +41,11 @@ resource "aws_instance" "newProvisioner" {
     }
     #using interpreter argument you can run any script e.g python,etc
     provisioner "local-exec" {
-    interpreter = [ 
-        "/usr/bin/python3 ","-c"
-     ]
-      command = "print('hello world')"
+        on_failure = continue
+        interpreter = [ 
+            "/usr/bin/python3 ","-c"
+        ]
+        command = "print('hello world')"
     }
 
 
