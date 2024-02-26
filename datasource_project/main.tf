@@ -4,7 +4,7 @@ data "aws_ami" "ubuntu" {
 
   filter {
     name   = "name"
-    values = ["ubuntu/images/hvm-ssd/ubuntu-jammy-22.04-amd64-server-*"]
+    values = ["${var.image_name}"]
   }
 
   filter {
@@ -16,7 +16,7 @@ data "aws_ami" "ubuntu" {
 }
 
 resource "aws_instance" "web" {
-  ami           = data.aws_ami.ubuntu
+  ami           = var.image_name
   instance_type = var.instance_type
   vpc_security_group_ids = [ "${aws_security_group.DataSourceSG.id}" ]
   tags = var.tags_names
