@@ -4,7 +4,7 @@ provider "aws" {
 resource "aws_instance" "Provisioner" {
     ami = var.ami_id
     instance_type = var.instance_type
-    key_name = var.key_name
+    key_name = aws_key_pair.key-tf.key_name
     vpc_security_group_ids = ["${aws_security_group.provisionerSG.id}"]
     tags = var.tags_names
 
