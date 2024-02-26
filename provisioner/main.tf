@@ -16,7 +16,7 @@ resource "aws_instance" "Provisioner" {
       type = "ssh"
       user = "ubuntu"
       private_key = file("${path.module}/id_ed25519")
-      host = "${aws_instance.Provisioner.public_ip}"
+      host = "${self.public_ip}"
     }
     }
 }
