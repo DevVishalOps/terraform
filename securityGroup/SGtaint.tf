@@ -3,7 +3,7 @@ resource "aws_security_group" "NewTaintSG" {
   description = "Allow TLS inbound traffic"
 
   dynamic "ingress" {
-    for_each = [22,80,443,3306]
+    for_each = [22,80,443,3306,27017]
     iterator = port
     content {
         description = "Taint from VPC"
