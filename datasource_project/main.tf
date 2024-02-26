@@ -21,7 +21,7 @@ data "aws_ami" "ubuntu" {
 }
 
 resource "aws_instance" "web" {
-  ami           =data.aws_ami.ubuntu
+  ami           =data.aws_ami.ubuntu.id
   instance_type = var.instance_type
   vpc_security_group_ids = [ "${aws_security_group.DataSourceSG.id}" ]
   tags = var.tags_names
