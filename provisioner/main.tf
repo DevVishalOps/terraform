@@ -5,7 +5,7 @@ resource "aws_instance" "Provisioner" {
     ami = var.ami_id
     instance_type = var.instance_type
     key_name = var.key_name
-    vpc_security_group_ids = ["${aws_security_group.nginxSG.id}"]
+    vpc_security_group_ids = ["${aws_security_group.provisionerSG.id}"]
     tags = var.tags_names
 
     # 3 types of provisioner--> file,local-exec,remote-exec
