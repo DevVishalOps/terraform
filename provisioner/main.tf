@@ -28,8 +28,25 @@ resource "aws_instance" "newProvisioner" {
     }
 
     #local-exec print command on your local machine where terraform run & command argument is required for local-exec provisioner
+    #1st-->And you can store any information about your server using local-exec you store in file
+    #2nd-->jenkins command line job
+    #3rd-->you can run any ansible playbook using this local-exec block 
     provisioner "local-exec" {
       command = "echo ${self.public_ip} > /tmp/mypublicip.txt"
     }
+    #using workigdir argument you can directe mention where you want to store your file in that directry
+    provisioner "local-exec" {
+    working_dir = "/tmp/"
+      command = "echo ${self.public_ip} > mypublicip.txt"
+    }
+    #using interpreter argument you can run any script e.g python,etc
+    provisioner "local-exec" {
+    interpreter = [ 
+        "/usr/bin/python3 ","-c"
+     ]
+      command = "hello world"
+    }
+
+
 
 }
