@@ -23,5 +23,5 @@ resource "aws_security_group" "provisionerSG" {
  }
 
  output "securityGroupDetatils" {
-    value = "${aws_security_group.provisioner.id}"
+    value = "${aws_security_group.provisionerSG.id}"
  }
