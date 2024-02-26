@@ -8,6 +8,11 @@ data "aws_ami" "ubuntu" {
   }
 
   filter {
+    name = "root-device-type"
+    values = [ "ebs" ]
+  }
+
+  filter {
     name   = "virtualization-type"
     values = ["hvm"]
   }
@@ -15,8 +20,8 @@ data "aws_ami" "ubuntu" {
   
 }
 
-resource "aws_instance" "web" {
-  ami           = var.image_name
+resource "aws_instance" "" {
+  ami           =data.aws_ami.ubuntu
   instance_type = var.instance_type
   vpc_security_group_ids = [ "${aws_security_group.DataSourceSG.id}" ]
   tags = var.tags_names
