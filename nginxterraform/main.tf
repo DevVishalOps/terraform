@@ -8,10 +8,5 @@ resource "aws_instance" "myproject" {
     vpc_security_group_ids = ["${aws_security_group.nginxSG.id}"]
     tags = var.tags_names
 
-    user_data = <<EOF
-    #!/bin/bash
-    sudo apt-get update
-    sudo apt-get install nginx -y
-    sudo echo "Hiii Vishal" > /var/www/html/index.nginx-debian.html
-    EOF
+    user_data = file("${path.module}/nginx.sh")
 }
