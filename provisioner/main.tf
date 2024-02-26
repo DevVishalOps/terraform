@@ -20,10 +20,16 @@ resource "aws_instance" "newProvisioner" {
     source = "security.tf"
     destination = "/tmp/security.tf"
     }
-
+    
+    #content you provide print the remote server
     provisioner "file" {
       content = "This my content"
       destination = "/tmp/content.md"
+    }
+
+    #local-exec print command on your local machine where terraform run & command argument is required for local-exec provisioner
+    provisioner "local-exec" {
+      command = "echo ${self.public_ip} > /tmp/mypublicip.txt"
     }
 
 }
