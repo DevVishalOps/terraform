@@ -1,11 +1,11 @@
 provider "aws" {   
     region = "ap-south-1"
 }
-resource "aws_instance" "Provisioner" {
+resource "aws_instance" "newProvisioner" {
     ami = var.ami_id
     instance_type = var.instance_type
     key_name = aws_key_pair.key-tf.key_name
-    vpc_security_group_ids = ["${aws_security_group.provisionerSG.id}"]
+    vpc_security_group_ids = ["${aws_security_group.newprovisionerSG.id}"]
     tags = var.tags_names
 
     #connection block used for provisioner

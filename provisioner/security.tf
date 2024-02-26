@@ -1,12 +1,12 @@
-resource "aws_security_group" "provisionerSG" {
-   name        = "provisionerSG"
-   description = "Allow provisioner inbound traffic"
+resource "aws_security_group" "newprovisionerSG" {
+   name        = "newprovisionerSG"
+   description = "Allow newprovisioner inbound traffic"
 
    dynamic "ingress" {
      for_each = [22,80,443,3306]
      iterator = port
      content {
-         description = "provisioner from VPC"
+         description = "newprovisioner from VPC"
          from_port = port.value
          to_port = port.value
          protocol = "tcp"
@@ -23,5 +23,5 @@ resource "aws_security_group" "provisionerSG" {
  }
 
  output "securityGroupDetatils" {
-    value = "${aws_security_group.provisionerSG.id}"
+    value = "${aws_security_group.newprovisionerSG.id}"
  }
