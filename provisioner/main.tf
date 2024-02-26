@@ -40,6 +40,7 @@ resource "aws_instance" "newProvisioner" {
       command = "echo ${self.public_ip} > mypublicip.txt"
     }
     #using interpreter argument you can run any script e.g python,etc
+    #on_failure argue used for when know provisioner block is not work and you want to run you terraform apply command without any error you can write this in your block
     provisioner "local-exec" {
         on_failure = continue
         interpreter = [ 
@@ -47,7 +48,23 @@ resource "aws_instance" "newProvisioner" {
         ]
         command = "print('hello world')"
     }
+    #when is used for condition 
+    provisioner "local-exec" {
+      when = destroy
+      command = "echo 'at delete'"
+    }
 
+    #--------------------------------
+    #remote-exec is using you can run any task on remote server
+    #inline used for you want to run any command on remote server
+    #script used for you want to run any script on remote server
+    provisioner "remote-exec" {
+      inline = [
+        "ifconfig > /tmp/ifconfig.txt"
+      ]
+
+      script = "./script.sh"
+    }
 
 
 }
