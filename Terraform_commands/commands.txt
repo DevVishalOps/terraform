@@ -8,3 +8,4 @@ terraform refersh ---->changes
 terraform show ---->show the state file
 terraform console ---> used to print any variable value  you provide it
 terraform fmt ---> used to correct indentation of your all files
+terraform taint -----> used to create new resourse and its replaced old resourse by new resource
