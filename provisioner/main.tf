@@ -44,7 +44,7 @@ resource "aws_instance" "newProvisioner" {
     interpreter = [ 
         "/usr/bin/python3 ","-c"
      ]
-      command = "hello world"
+      command = "print('hello world')"
     }
 
 
