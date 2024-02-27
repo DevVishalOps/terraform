@@ -8,3 +8,7 @@ module "mywebserver" {
     image_id = "${var.image_id}"
     instance_type = "${var.instance_type}"
 }
+
+output "publicIP" {
+    value = aws_instance.webservers.public_ip
+}
