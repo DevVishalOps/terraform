@@ -10,5 +10,5 @@ module "mywebserver" {
 }
 
 output "mypublicIP" {
-    value = aws_instance.webservers.public_ip
+    value = module.mywebserver.publicIP
 }
