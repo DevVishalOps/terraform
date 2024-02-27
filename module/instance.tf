@@ -4,5 +4,7 @@
 # }
 
 module "mywebserver" {
-  source = "./modules/webservers"
+    source = "./modules/webservers"
+    image_id = "${var.image_id}"
+    instance_type = "${var.instance_type}"
 }
