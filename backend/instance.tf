@@ -2,7 +2,7 @@ terraform {
   backend "s3" {
         bucket = "my-terraform-backend-bucket-1"
         region = "ap-south-1" 
-        key = "my-terraform-backend-bucket-1/backend/"
+        key = "my-terraform-backend-bucket-1/backend"
   }
 }
 
